@@ -1,0 +1,14 @@
+URxvt*font: xft:Terminus:size=14
+
+Urxvt.letterSpace: -10
+
+URxvt.perl-ext-common: tabbed,vtwheel,resize-font
+
+Urxvt.resize-font.smaller: C-Down
+Urxvt.resize-font.bigger: C-Up
+
+URxvt*background: #212121
+URxvt*foreground: #C0C0C0
+URxvt*color12: rgb:5c/5c/ff
+
+Xft.dpi: 120
