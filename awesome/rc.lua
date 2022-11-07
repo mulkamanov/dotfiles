@@ -67,7 +67,7 @@ local modkey       = "Mod4"
 local altkey       = "Mod1"
 local terminal     = "urxvtc"
 local editor       = os.getenv("EDITOR") or "emacs -nw"
-local browser      = "chromium"
+local browser      = "firefox"
 local guieditor    = "emacs"
 local scrlocker    = "slimlock" -- string.format("i3lock -e -i %s/imgs/lockscreen.png", os.getenv("HOME"))
 
@@ -164,6 +164,9 @@ lain.layout.cascade.tile.nmaster       = 5
 lain.layout.cascade.tile.ncol          = 2
 
 beautiful.init(string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), chosen_theme))
+
+-- Autostart
+awful.spawn.with_shell("~/.config/awesome/autorun.sh")
 -- }}}
 
 
@@ -391,12 +394,6 @@ globalkeys = my_table.join(
 
     -- Dropdown application
     awful.key({ modkey, }, "z", function () awful.screen.focused().quake:toggle() end,
-              {description = "dropdown application", group = "launcher"}),
-    awful.key({ modkey, "Shift" }, "z",
-              function ()
-                awful.screen.focused().quake.height = 0.9
-                awful.screen.focused().quake:compute_size()
-                end,
               {description = "dropdown application", group = "launcher"}),
 
     -- Widgets popups
