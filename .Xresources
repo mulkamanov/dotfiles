@@ -1,14 +1,56 @@
-URxvt*font: xft:Terminus:size=14
+!!! rxvt-unicode preferences
 
-Urxvt.letterSpace: -10
+!! Fonts
+URxvt.font: xft:DejaVu Sans Mono:size=14
+URxvt.boldFont: xft:DejaVu Sans Mono:size=14:weight=bold
 
-URxvt.perl-ext-common: tabbed,vtwheel,resize-font
+!! History limit
+URxvt.saveLines: 5000
 
-Urxvt.resize-font.smaller: C-Down
-Urxvt.resize-font.bigger: C-Up
+!! Xterm escape sequences
+URxvt.keysym.C-Up:    \033[1;5A
+URxvt.keysym.C-Down:  \033[1;5B
+URxvt.keysym.C-Left:  \033[1;5D
+URxvt.keysym.C-Right: \033[1;5C
+URxvt.keysym.M-Down:  \033[1;3B
+URxvt.keysym.M-Up:    \033[1;3A
+URxvt.keysym.M-Left:  \033[1;3D
+URxvt.keysym.M-Right: \033[1;3C
+URxvt.keysym.Home:    \033[1~
+URxvt.keysym.End:     \033[4~
+
+!! Enable Perl extensions
+URxvt.perl-ext-common: default,tabbedex,vtwheel,resize-font
+
+!! Copy/Paste
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.keysym.C-S-V: eval:paste_clipboard
+URxvt.keysym.C-S-C: eval:selection_to_clipboard
+URxvt.keysym.Control-Meta-c: builtin-string:
+URxvt.keysym.Control-Meta-v: builtin-string:
+
+!! Control tabs
+URxvt.keysym.C-t: perl:tabbedex:new_tab
+URxvt.keysym.C-n: perl:tabbedex:next_tab
+URxvt.keysym.C-p: perl:tabbedex:prev_tab
+URxvt.keysym.C-S-P: perl:tabbedex:move_tab_left
+URxvt.keysym.C-S-N: perl:tabbedex:move_tab_right
+URxvt.keysym.C-S-R: perl:tabbedex:rename_tab
+URxvt.tabbed.no-tabbedex-keys: true
+
+!! Scrollback buffer in secondary screen
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 0
+
+!! Change font size on Control-'='/'-'
+URxvt.keysym.C-[0x3d]: perl:font-size:increase
+URxvt.keysym.C-[0x2d]: perl:font-size:decrease
 
 URxvt*background: #212121
 URxvt*foreground: #C0C0C0
 URxvt*color12: rgb:5c/5c/ff
+
+!!! Display settings
 
 Xft.dpi: 120
